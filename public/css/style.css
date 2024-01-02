@@ -1,0 +1,957 @@
+*{
+margin: 0;
+padding: 0;
+font-family: 'Poppins', sans-serif;
+}
+body{
+    margin-top: 80px;
+}
+.navbar{
+    display: flex;
+    box-shadow: rgba(198, 198, 198, 0.2) 0px 7px 29px 0px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 10000;
+}
+.nav-left{
+    width: 5%;
+    padding: 20px;
+}
+.nav-middle{
+    width: 65%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-right{
+    width: 23%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-middle ul{
+    display: flex;
+}
+.nav-middle ul li{
+    margin-left: 35px;
+    list-style: none;
+    font-size: 17px;
+}
+.nav-middle ul li a{
+    text-decoration: none;
+    color: red;
+    transition: all 0.3s ease-in-out;
+}
+.nav-middle ul li a:hover{
+    color: green;
+}
+.fa-dumpster{
+    font-size: 30px;
+    color: red;
+    transition: all 0.3s ease-in-out;
+}
+.fa-dumpster:hover{
+    color: green;
+}
+.search-box input{
+    padding: 5px 20px;
+    border-radius: 50px;
+    border: none;
+    outline: 1px solid red;
+}
+.btn-search{
+    padding: 5px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+    transition: all 0.5s ease-in-out;
+}
+.btn-search:hover{
+    background: none;
+    color: red;
+}
+.fa-cart-shopping, .fa-heart{
+    font-size: 25px;
+    color: red;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.fa-cart-shopping:hover, .fa-heart:hover{
+    color: green;
+}
+.btn-signup, .btn-login, .btn-logout{
+    padding: 5px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+    transition: all 0.5s ease-in-out;
+}
+.btn-signup:hover, .btn-login:hover, .btn-logout:hover{
+    background: none;
+    color: green;
+}
+.myaccountbtn{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.footer{
+    padding: 20px;
+}
+.footer p{
+    text-align: center;
+}
+.signup-container, .login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signup-box, .login-box{
+    margin: 50px;
+    box-shadow: rgba(172, 170, 170, 0.2) 0px 7px 29px 0px;
+    padding: 50px;
+    border-radius: 50px;
+}
+.signup-box-msg, .login-box-msg{
+    text-align: center;
+}
+.signup-box-form form, .login-box-form form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+.signup-box-form form input, .login-box-form form input{
+    padding: 5px 10px;
+    border-radius: 50px;
+    outline: 1px solid red;
+    border: none;
+}
+.btn-submit-signup, .btn-submit-login{
+    margin-top: 15px;
+    padding: 10px;
+    background-color: red;
+    border: 2px solid red;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.btn-submit-signup:hover, .btn-submit-login:hover{
+    background: none;
+    color: red;
+}
+.error{
+    font-size: small;
+    color: red;
+}
+.signup-submit-msg, .login-submit-msg{
+    font-size: small;
+    color: green;
+}
+.cart-box{
+    position: fixed;
+    top: 0;
+    z-index: 10002;
+    background-color: red;
+    height: 100vh;
+    width: 25%;
+    transform: translateX(-100%);
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+.wish-box{
+    position: fixed;
+    top: 0;
+    z-index: 10001;
+    background-color: green;
+    height: 100vh;
+    width: 25%;
+    transform: translateX(-100%);
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+.open-cart, .open-wish{
+    animation-name: animateXPlus;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    transform: translateX(0%);
+}
+.close-cart, .close-wish{
+    animation-name: animateXMinus;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    transform: translateX(-100%);
+}
+@keyframes animateXPlus{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes animateXMinus{
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+.cart-box-under, .wish-box-under{
+    margin-top: 20px;
+}
+.contact-container{
+    display: flex;
+    width: 100%;
+}
+.contact-left{
+    width: 60%;
+}
+.contact-right{
+    width: 40%;
+    padding: 15px;
+}
+.contact-left form{
+    display: flex;
+    flex-direction: column;
+}
+.contact-left form div input{
+    width: 45.58%;
+}
+.contact-left form div{
+    margin: 15px;
+}
+.outer-contact-input, .contact-left form textarea, .contact-left form button{
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    padding: 5px 15px;
+    border-radius: 50px;
+    outline: none;
+    border: 1px solid red;
+}
+.contact-left form button{
+    border: 1px solid red;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.contact-left form button:hover{
+    background: none;
+    color: red;
+}
+.contact-left form div input{
+    padding: 5px 15px;
+    border-radius: 50px;
+    outline: none;
+    border: 1px solid red;
+}
+.contact-social-media button{
+    padding: 7px 15px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+    font-size: 15px;
+    transition: all 0.3s;
+    border-radius: 50%;
+}
+.contact-social-media a button:hover{
+    background: none;
+    color: red;
+}
+.contactus{
+    text-align: center;
+    padding: 15px;
+}
+.error-massages, .success-messages{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.success-messages{
+    color: green;
+}
+.product-card-container{
+    display: flex;
+    overflow: hidden;
+}
+.product-cards{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.product-card{
+    padding: 30px;
+    border-radius: 50px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    text-align: center;
+    margin: 20px;
+}
+.product-card img{
+    border-radius: 50px;
+}
+.product-card-button{
+    color: red;
+}
+#addtowishlistbtn{
+    padding: 5px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+    transition: all 0.5s ease-in-out;
+}
+#addtowishlistbtn:hover{
+    background: none;
+    color: green;
+}
+#addtocartbtn, .navigation-btn{
+    padding: 5px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+    transition: all 0.5s ease-in-out;
+    margin-bottom: 5px;
+}
+#addtocartbtn:hover, .navigation-btn:hover{
+    background: none;
+    color: red;
+}
+.products-header{
+    text-align: center;
+}
+.buttons {
+    text-align: center;
+}
+.admin-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.admin-container-left, .admin-container-right{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    width: 100%;
+}
+.addcategorybtn, .addproductbtn, .makeuseradmin, .adminorders{
+    padding: 20px;
+    background: none;
+    border-radius: 50px;
+    border: 1px solid green;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.addcategorybtn:hover, .addproductbtn:hover, .makeuseradmin:hover, .adminorders:hover{
+    background-color: green;
+    color: white;
+}
+.addcategoryform{
+    text-align: center;
+}
+.addcategoryform form input{
+    padding: 10px 20px;
+    border-radius: 50px;
+    outline: none;
+    border: 1px solid green;
+}
+.addcategoryform form button{
+    padding: 10px 20px;
+    border: 1px solid green;
+    color: green;
+    border-radius: 50px;
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.addcategoryform form button:hover{
+    background-color: green;
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+.addproductform{
+    display: flex;
+    justify-content: center;
+}
+.addproductform form{
+    display: flex;
+    flex-direction: column;
+}
+.addproductform form input, .addproductform form select{
+    margin-bottom: 5px;
+    padding: 10px 20px;
+    border: 1px solid green;
+    border-radius: 50px;
+    outline: none;
+}
+.addproductform form button{
+    padding: 10px 20px;
+    background: none;
+    border-radius: 50px;
+    border: 1px solid green;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.addproductform form button:hover{
+    background-color: green;
+    color: white;
+}
+.product-details-container{
+    display: flex;
+}
+.product-details-main-container{
+    padding: 50px;
+}
+.product-details-left{
+    width: 30%;
+}
+.product-details-right{
+    width: 70%;
+}
+.product-details-buttons{
+    margin-top: 15px;
+    display: flex;
+}
+.product-details-buttons div:first-child{
+    margin-right: 5px;
+}
+a{
+    color: black;
+}
+.addtocartmsg{
+    color: red;
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    border-radius: 50px;
+    padding: 5px;
+    z-index: 2222;
+}
+table, tr, th, td{
+    border: 1px solid white;
+    padding: 5px;
+    font-size: 10px;
+    border-collapse: collapse;
+}
+td{
+    text-align: center;
+}
+.tracecart{
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    color: white;
+    border: none;
+    transition: all 0.3s;
+    background: none;
+}
+.tracecart:hover{
+    color: green;
+}
+#quantityinput{
+    width: 40px;
+}
+.removecartmsg{
+    color: green;
+    position: fixed;
+    font-size: 10px;
+    top: 5px;
+}
+.removewishlistmsg{
+    color: red;
+    position: fixed;
+    font-size: 10px;
+    top: 5px;
+}
+#adminlogout{
+    text-align: center;
+}
+.addtocartfromwishlistmsg{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: red;
+}
+#addtocartfromwishlistbtn{
+    font-size: 8px;
+    background-color: red;
+    padding: 4px;
+    border-radius: 50px;
+    color: white;
+    border: 2px solid red;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+#addtocartfromwishlistbtn:hover{
+    background: none;
+    color: red;
+}
+.tracewishlist{
+    background: none;
+    color: white;
+    border: none;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.tracewishlist:hover{
+    color: red;
+}
+.categoryheader{
+    text-align: center;
+}
+.categories-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.categories-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.categories-buttons a button{
+    font-size: 20px;
+    padding: 10px 20px;
+    border: 1px solid red;
+    border-radius: 50px;
+    cursor: pointer;
+    color: white;
+    margin-top: 7px;
+    background-color: red;
+    transition: all 0.3s;
+}
+.categories-buttons a button:hover{
+    background: none;
+    color: red;
+}
+.product-category-header{
+    text-align: center;
+}
+.text-center{
+    text-align: center;
+}
+.ecommerce-quality-container{
+    display: flex;
+    padding: 35px;
+}
+.ecommerce-quality-card{
+    width: 20%;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-left: 20px;
+}
+.fa-shield-halved, .fa-bag-shopping, .phone, .fa-truck{
+    font-size: 70px;
+    color: red;
+}
+.ecommerce-brands{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+}
+.ecommerce-brand-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ecommerce-brand-container div{
+    margin: 35px;
+}
+
+/* Slider Styling */
+
+.images {
+    text-align: center;
+  }
+
+  .img {
+    width: 100%;
+    height: 70vh;
+  }
+
+  .sliderbtn {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 50px;
+    position: absolute;
+  }
+
+  #before {
+    top: 235px;
+    left: 15px;
+    color: red;
+  }
+
+  #after {
+    top: 235px;
+    right: 15px;
+    color: red;
+  }
+
+  #img2,
+  #img3 {
+    display: none;
+  }
+
+  .counting {
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .counting span {
+    border: 1px solid red;
+    padding: 2px 10px;
+    border-radius: 50%;
+    margin-left: 5px;
+  }
+
+  .active {
+    background-color: red;
+  }
+
+  #one,
+  #two,
+  #three {
+    cursor: pointer;
+  }
+.ecommerce-subscribe-container{
+    display: flex;
+    background-color: red;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50vh;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.ecommerce-subscribe-container form input{
+    padding: 10px 20px;
+    outline: none;
+    border-radius: 50px;
+    border: none;
+}
+.ecommerce-subscribe-container form button{
+    padding: 10px 20px;
+    outline: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border: 2px solid green;
+    transition: all 0.3s;
+}
+.ecommerce-subscribe-container form button:hover{
+    background: none;
+    color: green;
+}
+.ecommerce-subscribe-message{
+    color: green;
+}
+.make-user-admin-container{
+    text-align: center;
+}
+.make-user-admin-container form select{
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid green;
+    cursor: pointer;
+    outline: none;
+}
+.make-user-admin-container form button{
+    padding: 10px 20px;
+    border: 1px solid green;
+    border-radius: 50px;
+    background: none;
+    color: green;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.make-user-admin-container form button:hover{
+    background-color: green;
+    color: white;
+}
+.makeadminmsg{
+    padding: 10px;
+    text-align: center;
+    color: red;
+}
+.suberror{
+    color: green;
+}
+.checkout-container{
+    display: flex;
+}
+.left-checkout-container{
+    width: 70%;
+    padding: 50px;
+}
+.right-checkout-container{
+    width: 30%;
+    padding: 50px;
+}
+.checkout-address-form-container form{
+    display: flex;
+    flex-direction: column;
+}
+.checkout-address-form-container form input{
+    border: 1px solid red;
+    padding: 10px 20px;
+    border-radius: 50px;
+    outline: none;
+    margin-right: 5px;
+}
+.checkout-address-form-container form div{
+    display: flex;
+}
+.checkout-address-form-container form div div{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
+}
+.checkout-address-form-container form div div input{
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid red;
+    outline: none;
+}
+table, tr, td, th{
+    font-size: 13px;
+}
+.placeorderbtn{
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: green;
+    color: white;
+    border: 2px solid green;
+    transition: all 0.3s ease-in-out;
+}
+.placeorderbtn:hover{
+    background: none;
+    color: green;
+}
+.cart-checkout-btn a button{
+    margin-top: 10px;
+    color: white;
+    background-color: green;
+    padding: 5px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 2px solid green;
+    transition: all 0.3s ease-in-out;
+}
+.cart-checkout-btn a button:hover{
+    color: green;
+    background: none;
+}
+.user-account-container{
+    display: flex;
+}
+.user-account-left{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-account-left-box{
+    height: 80vh;
+    background-color: red;
+    padding: 30px;
+}
+.user-account-left-box p{
+    text-align: center;
+    color: white;
+    border: 2px solid green;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: green;
+    transition: all 0.3s ease-in-out;
+}
+.user-account-left-box p:hover{
+    background: none;
+}
+.user-account-right{
+    width: 70%;
+}
+.yourorders{
+    height: 80vh;
+    padding: 30px;
+}
+.yourorders table, .yourorders tr, .yourorders td, .yourorders th{
+    border: 1px solid black;
+    font-size: 15px;
+    padding: 10px;
+}
+#approved{
+    color: green;
+}
+#pending{
+    color: red;
+}
+.admin-order-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.vieworderbtn{
+    background: none;
+    color: green;
+    border: 2px solid green;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+}
+.vieworderbtn:hover{
+    background-color: green;
+    color: white;
+}
+.admin-order-container table th{
+    font-size: 20px;
+}
+.admin-order-container table td{
+    font-size: 15px;
+}
+.admin-order-container table tr, .admin-order-container table th, .admin-order-container table td{
+    border: 2px solid black;
+}
+.adminorderitembtn{
+    background: none;
+    padding: 5px 10px;
+    color: green;
+    border: 2px solid green;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.adminorderitembtn:hover{
+    background-color: green;
+    color: white;
+}
+.admin-order-item-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#completed{
+    color: blue;
+}
+.admin-order-item-msg{
+    color: red;
+}
+#cancelled{
+    color: aqua;
+}
+.about-container-one{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+.about-container-two{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+.startshoppingbtn{
+    color: white;
+    padding: 10px 20px;
+    background-color: red;
+    border-radius: 50px;
+    border: 2px solid red;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+}
+.startshoppingbtn:hover{
+    background: none;
+    color: red;
+}
+.about-container-two div{
+    padding: 20px;
+}
+.about-container-three{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about-container-three-div{
+    display: flex;
+    flex-direction: row;
+}
+.about-container-three-div div{
+    padding: 15px 30px;
+    background-color: rgb(219, 219, 219);
+    margin: 5px;
+    border-radius: 50px;
+}
+.quote-heading{
+    color: gray;
+}
+.deleteorderbtn{
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: 2px solid red;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.deleteorderbtn:hover{
+    color: red;
+    background: none;
+}
+.cancelorderbtn{
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: 2px solid green;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.cancelorderbtn:hover{
+    color: green;
+    background: none;
+}
+.ordermessege{
+    color: green;
+    text-align: center;
+    margin-bottom: 15px;
+}

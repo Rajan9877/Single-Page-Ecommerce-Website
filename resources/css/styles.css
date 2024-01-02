@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar{
+    display: flex;
+    box-shadow: rgba(198, 198, 198, 0.2) 0px 7px 29px 0px;
+}
+.nav-left{
+    width: 10%;
+    padding: 20px;
+}
+.nav-right{
+    width: 90%;
+    padding: 20px;
+}
+.nav-right ul{
+    display: flex;
+}
+.nav-right ul li{
+    margin-left: 50px;
+    list-style: none;
+    font-size: 20px;
+}
+.nav-right ul li a{
+    text-decoration: none;
+    color: red;
+    transition: all 0.3s ease-in-out;
+}
+.nav-right ul li a:hover{
+    color: green;
+}
+.fa-dumpster{
+    font-size: 30px;
+    color: red;
+    transition: all 0.3s ease-in-out;
+}
+.fa-dumpster:hover{
+    color: green;
+}
